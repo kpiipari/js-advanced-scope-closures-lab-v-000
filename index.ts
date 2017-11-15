@@ -1,19 +1,20 @@
-function produceDrivingRange(blockRange) {
-    return function (begin, end) {
+function produceDrivingRange(blockRange: number) {
+    return function(begin: string, end: string): string {
         const distance = Math.abs(parseInt(begin) - parseInt(end));
         if (distance > blockRange) {
             return `${distance - blockRange} blocks out of range`;
-        }
-        else {
+        } else {
             return `within range by ${blockRange - distance}`;
         }
     };
 }
-function produceTipCalculator(tip) {
-    return function (fare) {
+
+function produceTipCalculator(tip: number) {
+    return function(fare: number) {
         return tip * fare;
     };
 }
+
 function createDriver() {
     let DriverId = 0;
     return class {
@@ -23,4 +24,3 @@ function createDriver() {
         }
     };
 }
-//# sourceMappingURL=index.js.map
